@@ -8,7 +8,6 @@ team_a = Team("India")
 team_b = Team("Australia")
 team_a_scorecard = TeamScoreCard()
 team_b_scorecard = TeamScoreCard()
-match = Match(team_a, team_b, team_a_scorecard,team_b_scorecard)
 # Team India Players
 virat = Players("Virat", PlayerRole.BATSMAN)
 dhawan = Players("Dhawan", PlayerRole.BATSMAN)
@@ -30,12 +29,25 @@ warne = Players("Warne", PlayerRole.BOWLER)
 
 
 india_players = [Players("Virat", PlayerRole.BATSMAN), Players]
+team_a_scorecard.initialize_players([virat, raina, rohit, dhoni, zaheer, kumble])
+team_b_scorecard.initialize_players([gilchrist, hayden, ponting, lee,warne])
+match = Match(team_a, team_b, team_a_scorecard, team_b_scorecard)
 match.start_match(
-    1,1,[virat, raina, rohit, dhoni, zaheer, kumble], [gilchrist, hayden, ponting, lee,warne],
+    1,1,[virat, raina, rohit, dhoni, zaheer, kumble], [gilchrist, hayden, ponting, lee, warne],
 [dhawan, yuvraj], [watson, waugh]
 )
 match.initialize_innings(1, virat, raina, lee)
 match.show_score()
 match.ball_bowled(BallResult.SINGLE)
+match.ball_bowled(BallResult.DOT)
+match.show_score()
+match.ball_bowled(BallResult.SINGLE)
+match.show_score()
+match.ball_bowled(BallResult.SINGLE)
+match.show_score()
+match.ball_bowled(BallResult.DOT)
+match.show_score()
+match.ball_bowled(BallResult.SINGLE)
+match.show_score()
 match.ball_bowled(BallResult.SINGLE)
 match.show_score()

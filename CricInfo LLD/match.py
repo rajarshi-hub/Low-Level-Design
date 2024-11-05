@@ -67,9 +67,8 @@ class Match:
         elif result == BallResult.WICKET:
             self.strike_batsman = batsman
 
-        if self.batting_team.is_over_ended:
+        if self.batting_team.is_over_ended():
             self.initialize_over(bowler)
-
 
     def show_score(self):
         self.batting_team.show_score()
